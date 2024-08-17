@@ -13,8 +13,9 @@ git clone https://github.com/yagoprazim/CORPSYSTEM.git #Clone o repositório.
 cd .\CORPSYSTEM\ #Acesse a pasta raiz do projeto;
 docker-compose up --build #Comando para rodar o docker
 
-#Para ter acesso à área admin e aos endpoints, você precisa estar autenticado, portanto, crie um superuser:
+#Suba as migrações para o banco de dados. E Para ter acesso à área admin e aos endpoints, você precisa estar autenticado, portanto, crie um superuser:
 docker exec -it django-backend /bin/bash
+python manage.py migrate
 python manage.py createsuperuser
 ```
 Obs.: Resolvi deixar os arquivos de configuração no repositório para facilitar... (settings.json: para o back-end, .env: para o front-end)
