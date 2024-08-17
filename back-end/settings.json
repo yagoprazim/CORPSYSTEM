@@ -1,0 +1,75 @@
+{
+    "DEBUG":true,
+    "SECRET_KEY":"django-insecure-7fsseso!=#dza@k2jag5@$zal7ujm56riiy!gg0d5z57s%agg$",
+    "DATABASES":{
+        "default":{
+            "ENGINE":"django.db.backends.mysql",
+            "NAME": "corpsystem",
+            "USER": "root",
+            "PASSWORD":"root",
+            "HOST": "mysql-db", 
+            "PORT": "3306"
+        }
+    },
+    "JAZZMIN_SETTINGS":{
+        "site_title": "Corpsystem Admin",
+        "site_header": "Corpsystem",
+        "site_brand": "Corpsystem",
+        "site_logo": null,
+        "login_logo": null,
+        "login_logo_dark": null,
+        "site_logo_classes": "img-circle",
+        "site_icon": null,
+        "welcome_sign": "Corpsystem Admin Page",
+        "copyright": "Corpsystem Ltd",
+        "search_model": [],
+        "user_avatar": null,
+        "topmenu_links": [
+            {
+                "name": "Home",
+                "url": "admin:index",
+                "permissions": ["auth.view_user"]
+            },
+            {
+                "model": "auth.User"
+            },
+            {
+                "app": null
+            }
+        ],
+        "usermenu_links": [
+            {
+                "model": "auth.user"
+            }
+        ],
+        "show_sidebar": true,
+        "navigation_expanded": true,
+        "hide_apps": [],
+        "hide_models": [],
+        "order_with_respect_to": [
+            "api.Vendor",
+            "api.Client",
+            "api.Product",
+            "api.ProductGroup",
+            "api.Sale"
+        ],
+        "icons": {
+            "auth": "fas fa-users-cog",
+            "auth.user": "fas fa-user",
+            "auth.Group": "fas fa-users"
+        },
+        "default_icon_parents": "fas fa-chevron-circle-right",
+        "default_icon_children": "fas fa-circle",
+        "related_modal_active": false,
+        "custom_css": null,
+        "custom_js": null,
+        "use_google_fonts_cdn": true,
+        "show_ui_builder": false,
+        "changeform_format": "horizontal_tabs",
+        "changeform_format_overrides": {
+            "auth.user": "collapsible",
+            "auth.group": "vertical_tabs"
+        },
+        "language_chooser": false
+    }
+}

@@ -1,0 +1,14 @@
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from api.models.product import ProductGroup, Product
+from api.serializers.product import ProductGroupSerializer, ProductSerializer
+
+class ProductGroupViewSet(viewsets.ModelViewSet):
+    queryset = ProductGroup.objects.all()
+    serializer_class = ProductGroupSerializer
+    permission_classes = [IsAuthenticated]
+
+class ProductViewSet(viewsets.ModelViewSet):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    permission_classes = [IsAuthenticated]

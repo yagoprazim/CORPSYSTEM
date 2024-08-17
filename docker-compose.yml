@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  backend:
+    build: ./back-end
+    container_name: django-backend
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./back-end:/app
+    ports:
+      - "8000:8000"
+    environment:
+      CORPSYSTEM_SETTINGS_PATH: /app/settings.json
+    depends_on:
+      - db
+
+  frontend:
+    build: ./front-end/corpsystem
+    container_name: vue-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      VITE_API_URL: http://localhost:8000/api/
+    depends_on:
+      - backend
+
+  db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: corpsystem
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3307:3306"
+
+volumes:
+  mysql_data:
