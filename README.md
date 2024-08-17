@@ -17,7 +17,7 @@ docker-compose up --build #Comando para rodar o docker
 docker exec -it django-backend /bin/bash
 python manage.py migrate
 python manage.py createsuperuser
-#Provavelmente, será necessário reinicializar o container do back-end, após isso, estará tudo funcionando corretamente.
+#Será necessário reinicializar o container do back-end (ou você pode também rodar o comando docker-compose up --build novamente...), após isso, estará tudo funcionando corretamente. 
 ```
 Obs.: Resolvi deixar os arquivos de configuração no repositório para facilitar... (settings.json: para o back-end, .env: para o front-end)
 ## Endpoints Gerais:
