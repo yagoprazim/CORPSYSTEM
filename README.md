@@ -33,8 +33,4 @@ http://localhost:8000/admin/    --> Aqui, você pode criar novos vendedores/user
 Google Drive: https://drive.google.com/file/d/1yRAH_xQ6sGUx7FE3Ko1DtD4TR4ERqxGV/view?usp=sharing
 
 ## Tests:
-Os testes do back-end encontram-se no arquivo tests.py.
-Para rodá-los, basta:
-``` bash
-py manage.py test
-```
+Os testes do back-end encontram-se no arquivo tests.py, realizados para a model Client.
