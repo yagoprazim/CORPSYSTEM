@@ -11,9 +11,14 @@ Trata-se de um projeto fullstack com o uso de Django Rest Framework, Vue.js, MyS
 ``` bash
 git clone https://github.com/yagoprazim/CORPSYSTEM.git #Clone o repositório.
 cd .\CORPSYSTEM\ #Acesse a pasta raiz do projeto;
-docker-compose up --build #Comando para rodar o docker. Após isso, provavelmente estará tudo funcionando, com as migrações feitas para o banco de dados, e com o usuário root criado.
+docker-compose up --build #Comando para rodar o docker
 
-#Para acessar a área admin - username: root   password: root (http://localhost:8000/admin/)
+#Em outro terminal, com o server rodando, suba as migrações para o banco de dados. E Para ter acesso à área admin e aos endpoints, você precisa estar autenticado, portanto, crie um superuser:
+docker exec -it django-backend /bin/bash
+python manage.py migrate
+python manage.py createsuperuser
+#Após isso, pare o server e rode novamente:
+docker-compose up #pronto, estará tudo funcionando.
 ```
 Obs.: Resolvi deixar os arquivos de configuração no repositório para facilitar... (settings.json: para o back-end, .env: para o front-end)
 ## Endpoints Gerais:
